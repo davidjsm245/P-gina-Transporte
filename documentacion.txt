@@ -1,0 +1,43 @@
+ Autenticación
+ URL: http://localhost:5000/api/auth/login
+ DATOS JSON:
+ {
+    "email": "plus@mail.com",
+    "password": "1234"
+ }
+
+
+ MÉTODO GET ÚNICO
+ URL: http://localhost:5000/api/cliente/id
+
+ MÉTODO GET MULTIPLE
+ URL: http://localhost:5000/api/cliente?page=1&string=&limit=10d
+
+ MÉTODO POST 
+ URL: http://localhost:5000/api/cliente
+ DATOS JSON:
+ {
+   "nombre": "",
+   "telefono": "",
+   "email": "",
+   "direccion": "",
+   "tipo": "",
+   "estado": "",
+   "fecha_registro": ""
+ }
+
+ MÉTODO PUT
+ URL: http://localhost:5000/api/cliente/id
+ DATOS JSON:
+ {
+   "nombre": "",
+   "telefono": "",
+   "email": "",
+   "direccion": "",
+   "tipo": "",
+   "estado": "",
+   "fecha_registro": ""
+ }
+
+MÉTODO DELETE
+URL: http://localhost:5000/api/cliente/id
