@@ -180,63 +180,6 @@ router.put("/:id", verifyToken, (req, res) => {
   });
 });
 
-/*
-// MÉTODO DELETE
-router.delete('/:id', verifyToken, (req, res) => {
-    const { id } = req.params;
-
-    // Verificamos si el almacén tiene registros asociados antes de eliminarlo
-    const search_query = 'SELECT COUNT(*) as contador FROM empresa WHERE id_almacen = ?;';
-    db.query(search_query, [id], (err, search_result) => {
-        if (err) {
-            console.error(err);
-            return res.status(500).json({ error: 'Error interno al verificar obras del almacén' });
-        }
-        
-        if (search_result[0].contador > 0) {
-            return res.status(409).json({ 
-                error: 'El almacén no se puede eliminar porque tiene obras vinculadas a exposiciones' 
-            });
-        }
-
-        const query = 'DELETE FROM almacen WHERE id_almacen = ?';
-        db.query(query, [id], (err, result) => {
-            if (err) {
-                console.error(err);
-                return res.status(500).json({ error: 'Error al eliminar almacén' });
-            }
-            if (result.affectedRows === 0) {
-                return res.status(404).json({ message: 'Almacén no encontrado' });
-            }
-            res.status(200).json({ message: 'Almacén eliminado correctamente' });
-        });
-    });
-}
-);
-*/
-
-//este es del ingeniero
-/*
-router.delete("/:id", verifyToken, (req, res) => {
-  // Obtener el ID del almacén a eliminar y el ID de la empresa del usuario autenticado
-  const idAlmacen = req.params.id;//id del almacén a eliminar
-    // Verificar si el almacén tiene empresas asociadas
-    const Query = "delete from almacen where id_almacen = ? ";
-    db.query(Query, [idAlmacen], (err, result) => {
-      if (err) {
-        console.error(err);
-        return res.status(500).json({ error: "Error al eliminar el almacén" });
-      } else {
-        if (result.affectedRows === 0) {
-          return res.status(404).json({ error: "Almacén no encontrado" });
-        } else {
-          return res.status(200).json({ message: "Almacén eliminado correctamente" });
-        } 
-      }
-    });
-  });
-**/
-
 //--------->
 router.delete("/:id", verifyToken, async (req, res) => {
   const idAlmacen = req.params.id;
