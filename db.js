@@ -2,11 +2,12 @@ const mysql = require('mysql2');
 require('dotenv').config();
 
 const db = mysql.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME
-})
+    host: process.env.MYSQLHOST || 'localhost',
+    user: process.env.MYSQLUSER || 'root',
+    password: process.env.MYSQLPASSWORD || '',
+    database: process.env.MYSQLDATABASE || 'railway', // En tu local pon el nombre de tu bd local
+    port: process.env.MYSQLPORT || 3306
+});
 
 db.connect((err) => {
     if (err) {
@@ -14,6 +15,6 @@ db.connect((err) => {
         return;
     }
     console.log('Conexión exitosa con la base de datos');
-})
+});
 
-module.exports = db; //Exporta el objeto de conexion
+module.exports = db;
