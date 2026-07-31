@@ -4,9 +4,9 @@ require('dotenv').config();
 console.log('DB CONFIG →', {
     host: process.env.MYSQLHOST,
     port: process.env.MYSQLPORT,
-    database: process.env.MYSQLDATABASE
+    database: process.env.MYSQLDATABASE,
+    user: process.env.MYSQLUSER
 });
-
 
 const pool = mysql.createPool({
     host: process.env.MYSQLHOST || 'localhost',
