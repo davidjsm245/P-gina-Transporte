@@ -4,7 +4,7 @@ require('dotenv').config();
 const db = mysql.createConnection({
     host: process.env.MYSQLHOST || 'localhost',
     user: process.env.MYSQLUSER || 'root',
-    password: process.env.MYSQLPASSWORD || '',
+    password: process.env.MYSQLPASSWORD || 'KEkOcbfzUVnFpxoKMXEObUmPiSwnnGnv',
     database: process.env.MYSQLDATABASE || 'railway', // En tu local pon el nombre de tu bd local
     port: process.env.MYSQLPORT || 3306
 });
